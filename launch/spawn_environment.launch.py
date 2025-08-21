@@ -21,7 +21,7 @@ def generate_launch_description():
         'world',
         default_value='mountain_forest',
         description='Which world to load',
-        choices=['mountain_forest'] # Add more worlds here , seperated by commas
+        choices=['mountain_forest', 'test'] # Add more worlds here , seperated by commas
     )
     ld.add_action(world_launch_arg)
 

@@ -1,0 +1,20 @@
+<sdf version="1.7">
+<model name="pine_tree">  
+    <static>true</static>
+    <link name="pine_tree">
+        <pose>0 0 0 0 0 0</pose>
+        <collision name="pine_tree_collision">
+            <geometry>
+		<box> 1 1 2 </box>
+            </geometry>
+        </collision>
+        <visual name="pine_tree_visual">
+            <geometry>
+                <mesh>
+                    <uri>model://pine_tree/meshes/pine_tree.dae</uri>
+                </mesh>
+            </geometry>
+        </visual>
+    </link>
+</model>
+</sdf>
