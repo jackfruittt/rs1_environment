@@ -1,0 +1,22 @@
+<sdf version="1.7">
+<model name="fence_2">  
+    <static>true</static>
+    <link name="fence_2">
+        <pose>0 0 0 0 0 0</pose>
+        <collision name="fence_2_collision">
+            <geometry>
+                <mesh>
+                    <uri>model://fence_2/meshes/fence_2.dae</uri>
+                </mesh>
+            </geometry>
+        </collision>
+        <visual name="fence_2_visual">
+            <geometry>
+                <mesh>
+                    <uri>model://fence_2/meshes/fence_2.dae</uri>
+                </mesh>
+            </geometry>
+        </visual>
+    </link>
+</model>
+</sdf>
