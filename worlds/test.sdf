@@ -1,21 +1,15 @@
 <sdf version='1.9'>
   <world name='test'>
-
     <plugin name='ignition::gazebo::systems::Physics' filename='ignition-gazebo-physics-system'/>
     <plugin name='ignition::gazebo::systems::UserCommands' filename='ignition-gazebo-user-commands-system'/>
     <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='ignition-gazebo-scene-broadcaster-system'/>
     <plugin name='ignition::gazebo::systems::Contact' filename='ignition-gazebo-contact-system'/>
     <plugin name='ignition::gazebo::systems::ParticleEmitter2' filename='ignition-gazebo-particle-emitter2-system'/>
-
-    <!-- From rs1_robot simple_trees_builtin.sdf plugin fix -->
-
     <plugin name='ignition::gazebo::systems::Sensors' filename='ignition-gazebo-sensors-system'>
       <render_engine>ogre2</render_engine>
     </plugin>
-
-    <plugin name='ignition::gazebo::systems::Imu' filename='ignition-gazebo-imu-system' />
-    <plugin name='ignition::gazebo::systems::NavSat' filename='ignition-gazebo-navsat-system' />
-
+    <plugin name='ignition::gazebo::systems::Imu' filename='ignition-gazebo-imu-system'/>
+    <plugin name='ignition::gazebo::systems::NavSat' filename='ignition-gazebo-navsat-system'/>
     <gravity>0 0 -9.81</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
@@ -37,94 +31,2524 @@
       <heading_deg>0</heading_deg>
       <surface_model>EARTH_WGS84</surface_model>
     </spherical_coordinates>
-
-    <!-- Mountain Forest Terrain-->
-    <include>
-      <uri>model://mountain_forest</uri>
-      <name>mountain_forest</name>
+    
+    <model name='mountain_forest'>
+      <static>true</static>
+      <link name='mountain_forest'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='mountain_forest_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/mountain_forest/model://mountain_forest/meshes/mountain_forest.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='mountain_forest_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/mountain_forest/model://mountain_forest/meshes/mountain_forest.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
       <pose>0 0 0 0 -0 0</pose>
-    </include>
+      <self_collide>false</self_collide>
+    </model>
 
-    <!-- Person Model List -->
     <include>
 	      <uri>
 		      model://person
 	      </uri>
-	      <name>person1</name>
-	      <pose>2 10 1 0 0 0</pose>
-	</include>
+	      <name>person2</name>
+	      <pose>-20.8929 -5.64475 15 0 0 0</pose>
+	  </include>
 
     <include>
-        <uri>
-            model://lowpolytree_1
-        </uri>
-        <name>lowpolytree_1</name>
-        <pose>5 5 0 0 0 0</pose>
+      <uri>model://rock2</uri>
+      <name>rock_2</name>
+      <pose>2.10581 15 1.92085 0 -0.814 0</pose>
+    </include>
+    <include>
+      <uri>model://rock2</uri>
+      <name>rock_2_1</name>
+      <pose>-18.9183 7.72946 4.13982 -0.711548 -0.731404 3.06097</pose>
+    </include>
+    <include>
+      <uri>model://rock2</uri>
+      <name>rock_2_3</name>
+      <pose>-19.8736 -21.0366 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://rock2</uri>
+      <name>rock_2_4</name>
+      <pose>10.8024 -18.6377 2.84695 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://rock2</uri>
+      <name>rock_2_5</name>
+      <pose>18.7823 23.9711 4.11951 3.14159 -1.36805 3.14159</pose>
+    </include>
+    <include>
+      <uri>model://rock2</uri>
+      <name>rock_2_6</name>
+      <pose>-20.8929 -5.64475 10.1251 3.14159 -1.40505 3.14159</pose>
+    </include>
+    <include>
+      <uri>model://rock2</uri>
+      <name>rock_2_6_1</name>
+      <pose>15.0957 -28.4351 11.777 3.14159 -1.40505 3.14159</pose>
+    </include>
+    <include>
+      <uri>model://rock1</uri>
+      <name>rock_1_1</name>
+      <pose>-17.808 9.01672 2.78859 -1.05335 0 0</pose>
+    </include>
+        <include>
+      <uri>model://rock1</uri>
+      <name>rock_1_2</name>
+      <pose>13.7477 4.82278 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://rock1</uri>
+      <name>rock_1_3</name>
+      <pose>31.2617 18.5153 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://rock1</uri>
+      <name>rock_1_4</name>
+      <pose>14.8214 21.1238 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://rock1</uri>
+      <name>rock_1_5</name>
+      <pose>-11.2292 -17.5464 0 0 -0 0</pose>
+    </include>
+    <include>
+      <uri>model://rock1</uri>
+      <name>rock_1_6</name>
+      <pose>-25.8217 -6.57086 11.274 0 -0 0.627281</pose>
+    </include>
+    <include>
+      <uri>model://rock1</uri>
+      <name>rock_1_6_1</name>
+      <pose>-19.9807 -3.46305 11.274 0 -0.231694 0</pose>
+    </include>
+    <include>
+      <uri>model://rock2</uri>
+      <name>rock_2_1_1</name>
+      <pose>-23.8445 0.85448 5.66176 0.041053 -0.612029 1.55599</pose>
+    </include>
+    <include>
+      <uri>model://rock1</uri>
+      <name>rock_1_1_1</name>
+      <pose>-23.577 2.35815 4.0371 -1.05335 0 0</pose>
     </include>
 
-    <include>
-        <uri>
-            model://lowpolytree_2
-        </uri>
-        <name>lowpolytree_2</name>
-        <pose>5 10 0 0 0 0</pose>
-    </include>
+    <model name='person1'>
+      <link name='link'>
+        <inertial>
+          <pose>0 -0.1 0.95 0 -0 0</pose>
+          <mass>80</mass>
+          <inertia>
+            <ixx>24.879999999999999</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>25.73</iyy>
+            <iyz>0</iyz>
+            <izz>2.48</izz>
+          </inertia>
+        </inertial>
+        <collision name='bottom'>
+          <pose>0 -0.1 0.01 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.35 0.02</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='person'>
+          <pose>0 0 0.02 0.04 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/person/model://person/meshes/standing.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <pose>0 0 0.02 0.04 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/person/model://person/meshes/standing.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>2.07138 9.83422 -0.2553 -0.008177 0.019178 0.145419</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
 
-    <include>
-        <uri>
-            model://lowpolytree_3
-        </uri>
-        <name>lowpolytree_3</name>
-        <pose>5 15 0 0 0 0</pose>
-    </include>
+    <model name='lowpolytree_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>5 5 0.320342 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
 
-    <include>
-        <uri>
-            model://lowpolytree_4
-        </uri>
-        <name>lowpolytree_4</name>
-        <pose>5 -5 0 0 0 0</pose>
-    </include>
+    <model name='lowpolytree_4'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>4.28079 8.07195 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
 
-    <include>
-        <uri>
-            model://lowpolytree_5
-        </uri>
-        <name>lowpolytree_5</name>
-        <pose>5 -10 0 0 0 0</pose>
-    </include>
+    <model name='lowpolytree_5'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>10.4934 8.71524 0 0 0 -0.761097</pose>
+      <self_collide>false</self_collide>
+    </model>
 
-    <include>
-        <uri>
-            model://fence_1
-        </uri>
-        <name>fence_1</name>
-        <pose>0 0 0 0 0 0</pose>
-    </include>
+    <model name='fence_1'>
+      <static>true</static>
+      <link name='fence_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='fence_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_1/model://fence_1/meshes/fence_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='fence_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_1/model://fence_1/meshes/fence_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>3.3328 8.58852 -0.285288 0 0 -0.551979</pose>
+      <self_collide>false</self_collide>
+    </model>
 
-    <include>
-        <uri>
-            model://fence_2
-        </uri>
-        <name>fence_2</name>
-        <pose>2 2 0 0 0 0</pose>
-    </include>
+    <model name='fence_2'>
+      <static>true</static>
+      <link name='fence_2'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='fence_2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='fence_2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>2.8847 8.19482 -0.1802 0 0 -0.342087</pose>
+      <self_collide>false</self_collide>
+    </model>
 
-    <include>
-        <uri>
-            model://boulder_1
-        </uri>
-        <name>boulder_1</name>
-        <pose>-5 5 0 0 0 0</pose>
-    </include>
+    <model name='lowpolytree_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>10.2389 5.09046 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
 
-    <include>
-        <uri>
-            model://boulder_2
-        </uri>
-        <name>boulder_2</name>
-        <pose>-10 5 0 0 0 0</pose>
-    </include>
+    <model name='lowpolytree_1_3'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>6.82053 9.49544 -0.364963 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='fence_2_1'>
+      <static>true</static>
+      <link name='fence_2'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='fence_2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='fence_2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>7.99353 13.3338 -0.1802 0 0 -0.906578</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='fence_2_1_1'>
+      <static>true</static>
+      <link name='fence_2'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='fence_2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='fence_2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>12.681 13.9029 -0.1802 0 0 -1.45848</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='fence_2_3'>
+      <static>true</static>
+      <link name='fence_2'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='fence_2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='fence_2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>1.52048 3.95383 -0.039898 -0.015204 0 -0.194823</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_5'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>9.85882 -9.4139 0.947991 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_5_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>14.1887 -7.74744 1.52084 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_5_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>18.9752 -8.66418 3.4867 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_5_1'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>13.5833 -15.9725 3.07385 0 0 -0.595097</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>11.6205 -6.9588 1.12121 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_3'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>8.85614 -14.0887 2.83124 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    
+    <model name='lowpolytree_1_5_1_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>14.8335 -12.8151 2.75438 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_5_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>16.9455 -5.77316 2.38542 0 0 -1.38507</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_5_1_2'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>7.6573 0.353314 -0.004936 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_5_1_3'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>3.89018 -11.0353 0.388951 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_5_1_4'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>9.53683 -4.33958 0.291374 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_5_1_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>5.58057 -4.08361 -0.101406 0 -0 0.475917</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>1.43462 -1.10278 -0.03434 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>3.77282 -2.6954 -0.03434 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    
+    <model name='lowpolytree_4_1_1_2'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>2.34368 -4.35808 -0.03434 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1_3'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>4.25528 -6.61002 0.218922 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    
+    <model name='lowpolytree_4_1_1_4'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>6.89279 -7.5714 0.485679 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-2.75572 29.7328 0.320342 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-3.79295 25.0775 0.320342 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_2'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-7.23315 33.4938 0.472952 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_3'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-10.0095 22.7352 0.320342 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_4'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-13.8835 31.6748 2.38138 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_5'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-15.069 26.5047 1.57222 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_5_1_1_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-26.6989 18.8455 -0.101406 0 -0 1.30025</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_5_1_1_1_2'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>7.2404 26.4842 1.1041 0 -0 0.022879</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1_5'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-28.3041 17.0098 0.168574 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1_6'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-25.2471 17.3913 0.530243 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1_7'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-26.1294 20.6155 0.376498 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_5_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-29.9991 19.4142 -0.279949 0 -0 0.409288</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1_8'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-13.6022 -1.82598 14.3783 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1_8_1'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-15.1751 -1.05424 14.6125 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_5_1_2'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-13.3017 -3.23672 13.5086 0 0 -0.595097</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_5'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>8.8506 26.1759 1.46468 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_7'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>6.35028 25.3174 0.483148 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_5_2'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>10.3878 23.8141 0.335544 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>15.7121 10.0652 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_1_2'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>22.3446 12.5183 0.000914 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_1_3'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>20.4233 8.76522 -0.137972 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_5_3'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>18.1447 12.4691 0 0 0 -1.76285</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_2'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>24.5198 14.8585 0.102017 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_3'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>15.5119 13.2248 -0.193686 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_1_4'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>21.2663 -0.327834 9.22497 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_1_4_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>15.6797 0.857048 4.2295 0 -0.339779 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    
+    <model name='lowpolytree_4_1_1_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>18.4441 1.55779 6.33671 -0.383807 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_5_1_1_2'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>18.0211 -2.43945 5.40075 0.106796 -0.161645 0.548573</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_5_1_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-26.0735 14.2684 0.495269 0 -0 0.409288</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_5_1_2'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-17.8246 16.3125 1.72846 0.20564 0 0.409288</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_5_1_2_1'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-21.4832 20.0309 2.65265 0 -0 0.409288</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_5_1_1_1_3'>
+      <static>true</static>
+      <link name='lowpolytree_5'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_5_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_5_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_5/model://lowpolytree_5/meshes/lowpolytree_5.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-21.4158 12.6666 0.677035 0 -0 0.475917</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1_6_1'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-21.2574 15.8432 1.17661 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_4_1_1_6_2'>
+      <static>true</static>
+      <link name='lowpolytree_4'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_4_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_4_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_4/model://lowpolytree_4/meshes/lowpolytree_4.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-24.1447 23.2183 1.59943 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='lowpolytree_1_7_5_1_3'>
+      <static>true</static>
+      <link name='lowpolytree_1'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='lowpolytree_1_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='lowpolytree_1_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-27.2791 24.1877 1.99175 0.239722 0 0.409288</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='fence_2_3_1'>
+      <static>true</static>
+      <link name='fence_2'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='fence_2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='fence_2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0.090463 -13.7365 0.346526 -0.004299 -0.010305 -1.05333</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='fence_2_3_1_1'>
+      <static>true</static>
+      <link name='fence_2'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='fence_2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='fence_2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-3.90308 -16.1462 0.337989 -0.062452 -0.009602 -0.91292</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <model name='fence_2_3_1_1_1'>
+      <static>true</static>
+      <link name='fence_2'>
+        <pose>0 0 0 0 -0 0</pose>
+        <collision name='fence_2_collision'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='fence_2_visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/fence_2/model://fence_2/meshes/fence_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-7.32943 -19.1534 0.550815 -0.060844 0.017051 -0.48766</pose>
+      <self_collide>false</self_collide>
+    </model>
 
     <light name='sun' type='directional'>
       <pose>0 0 100 0 -0 0</pose>
@@ -145,6 +2569,5 @@
         <falloff>0</falloff>
       </spot>
     </light>
-
   </world>
 </sdf>
