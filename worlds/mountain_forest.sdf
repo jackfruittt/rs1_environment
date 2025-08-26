@@ -4,7 +4,7 @@
     <plugin name='ignition::gazebo::systems::Physics' filename='ignition-gazebo-physics-system'/>
     <plugin name='ignition::gazebo::systems::UserCommands' filename='ignition-gazebo-user-commands-system'/>
     <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='ignition-gazebo-scene-broadcaster-system'/>
-    <plugin name='ignition::gazebo::systems::Contact' filename='ignition-gazebo-contact-system'/>
+    <!-- <plugin name='ignition::gazebo::systems::Contact' filename='ignition-gazebo-contact-system'/> -->
     <plugin name='ignition::gazebo::systems::ParticleEmitter2' filename='ignition-gazebo-particle-emitter2-system'/>
 
     <!-- From rs1_robot simple_trees_builtin.sdf plugin fix -->
@@ -13,16 +13,29 @@
       <render_engine>ogre2</render_engine>
     </plugin>
 
-    <plugin name='ignition::gazebo::systems::Imu' filename='ignition-gazebo-imu-system' />
-    <plugin name='ignition::gazebo::systems::NavSat' filename='ignition-gazebo-navsat-system' />
+    <!-- <plugin name='ignition::gazebo::systems::Imu' filename='ignition-gazebo-imu-system' /> -->
+    <!-- <plugin name='ignition::gazebo::systems::NavSat' filename='ignition-gazebo-navsat-system' /> -->
 
     <gravity>0 0 -9.81</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
-    <physics name='default_physics' type='ignored'>
+    <physics name='default_physics' type='ode'>  <!-- Changed from 'ignored' to 'ode' (Open Dynamics Engine) -->
       <max_step_size>0.01</max_step_size>
       <real_time_factor>1</real_time_factor>
       <real_time_update_rate>100</real_time_update_rate>
+      <ode>  
+        <solver>
+          <type>quick</type>
+          <iters>25</iters>  <!-- Reduce solver iterations -->
+          <sor>1.3</sor>
+        </solver>
+        <constraints>
+          <cfm>0.0</cfm>
+          <erp>0.2</erp>
+          <contact_max_correcting_vel>100.0</contact_max_correcting_vel>
+          <contact_surface_layer>0.001</contact_surface_layer>
+        </constraints>
+      </ode>
     </physics>
     <scene>
       <ambient>1 1 1 1</ambient>
