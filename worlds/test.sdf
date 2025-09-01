@@ -77,85 +77,36 @@
 	  </include>
 
     <include>
-      <uri>model://rock2</uri>
-      <name>rock_2</name>
-      <pose>2.10581 15 1.92085 0 -0.814 0</pose>
-    </include>
+	      <uri>
+		      model://campfire
+	      </uri>
+	      <name>campfire1</name>
+	      <pose>0 0 0 0 0 0</pose>
+	  </include>
+
     <include>
-      <uri>model://rock2</uri>
-      <name>rock_2_1</name>
-      <pose>-18.9183 7.72946 4.13982 -0.711548 -0.731404 3.06097</pose>
-    </include>
+	      <uri>
+		      model://rocks_1
+	      </uri>
+	      <name>rocks</name>
+	      <pose>0 0 2 0 0 0</pose>
+	  </include>
+
     <include>
-      <uri>model://rock2</uri>
-      <name>rock_2_3</name>
-      <pose>-19.8736 -21.0366 0 0 -0 0</pose>
-    </include>
+	      <uri>
+		      model://rocks_2
+	      </uri>
+	      <name>rocks2</name>
+	      <pose>0 0 6 0 0 0</pose>
+	  </include>
+
     <include>
-      <uri>model://rock2</uri>
-      <name>rock_2_4</name>
-      <pose>10.8024 -18.6377 2.84695 0 -0 0</pose>
-    </include>
-    <include>
-      <uri>model://rock2</uri>
-      <name>rock_2_5</name>
-      <pose>18.7823 23.9711 4.11951 3.14159 -1.36805 3.14159</pose>
-    </include>
-    <include>
-      <uri>model://rock2</uri>
-      <name>rock_2_6</name>
-      <pose>-20.8929 -5.64475 10.1251 3.14159 -1.40505 3.14159</pose>
-    </include>
-    <include>
-      <uri>model://rock2</uri>
-      <name>rock_2_6_1</name>
-      <pose>15.0957 -28.4351 11.777 3.14159 -1.40505 3.14159</pose>
-    </include>
-    <include>
-      <uri>model://rock1</uri>
-      <name>rock_1_1</name>
-      <pose>-17.808 9.01672 2.78859 -1.05335 0 0</pose>
-    </include>
-        <include>
-      <uri>model://rock1</uri>
-      <name>rock_1_2</name>
-      <pose>13.7477 4.82278 0 0 -0 0</pose>
-    </include>
-    <include>
-      <uri>model://rock1</uri>
-      <name>rock_1_3</name>
-      <pose>31.2617 18.5153 0 0 -0 0</pose>
-    </include>
-    <include>
-      <uri>model://rock1</uri>
-      <name>rock_1_4</name>
-      <pose>14.8214 21.1238 0 0 -0 0</pose>
-    </include>
-    <include>
-      <uri>model://rock1</uri>
-      <name>rock_1_5</name>
-      <pose>-11.2292 -17.5464 0 0 -0 0</pose>
-    </include>
-    <include>
-      <uri>model://rock1</uri>
-      <name>rock_1_6</name>
-      <pose>-25.8217 -6.57086 11.274 0 -0 0.627281</pose>
-    </include>
-    <include>
-      <uri>model://rock1</uri>
-      <name>rock_1_6_1</name>
-      <pose>-19.9807 -3.46305 11.274 0 -0.231694 0</pose>
-    </include>
-    <include>
-      <uri>model://rock2</uri>
-      <name>rock_2_1_1</name>
-      <pose>-23.8445 0.85448 5.66176 0.041053 -0.612029 1.55599</pose>
-    </include>
-    <include>
-      <uri>model://rock1</uri>
-      <name>rock_1_1_1</name>
-      <pose>-23.577 2.35815 4.0371 -1.05335 0 0</pose>
-    </include>
+	      <uri>
+		      model://rocks_3
+	      </uri>
+	      <name>rocks3</name>
+	      <pose>5 5 6 0 0 0</pose>
+	  </include>
 
     <model name='person1'>
       <link name='link'>
@@ -397,7 +348,7 @@
         <collision name='lowpolytree_1_collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/ace-rv/rs1_ros2_ws/install/rs1_environment/share/rs1_environment/models/lowpolytree_1/model://lowpolytree_1/meshes/lowpolytree_1.dae</uri>
+              <uri>model://lowpolytree_1</uri>
             </mesh>
           </geometry>
         </collision>
