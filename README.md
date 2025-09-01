@@ -118,8 +118,8 @@ ros2 launch rs1_environment spawn_environment.launch.py world:=world_1 # By Defa
 
 ## Environment/World Photos ##
 - World_1 AprilTag cube with the size 3x3x3 compared to 1x1x1 
-![AprilTag Cube for scenario representation](</rs1_environment/images/Screenshot%20from%202025-09-01%2019-37-20.png>)
-![AprilTag Cube for scenario representation](</rs1_environment/images/Screenshot from 2025-09-01 19-05-57.png>)
+![AprilTag Cube for scenario representation](</images/Screenshot%20from%202025-09-01%2019-37-20.png>)
+![AprilTag Cube for scenario representation](</images/Screenshot from 2025-09-01 19-05-57.png>)
 
 - World_1 Top_Down View
 ![Map View of World_1](</rs1_environment/images/Screenshot from 2025-09-01 18-11-17.png>)
