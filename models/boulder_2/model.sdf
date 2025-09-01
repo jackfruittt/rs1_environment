@@ -1,0 +1,22 @@
+<sdf version="1.7">
+<model name="boulder_2">  
+    <static>true</static>
+    <link name="boulder_2">
+        <pose>0 0 0 0 0 0</pose>
+        <collision name="boulder_2_collision">
+            <geometry>
+                <mesh>
+                    <uri>model://boulder_2/meshes/boulder_2.dae</uri>
+                </mesh>
+            </geometry>
+        </collision>
+        <visual name="boulder_2_visual">
+            <geometry>
+                <mesh>
+                    <uri>model://boulder_2/meshes/boulder_2.dae</uri>
+                </mesh>
+            </geometry>
+        </visual>
+    </link>
+</model>
+</sdf>

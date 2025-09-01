@@ -1,0 +1,22 @@
+<sdf version="1.7">
+<model name="mountain_forest_environment">  
+    <static>true</static>
+    <link name="mountain_forest_environment">
+        <pose>0 0 0 0 0 0</pose>
+        <collision name="collision">
+            <geometry>
+                <mesh>
+                    <uri>model://mountain_forest_environment/meshes/mountain_forest_environment.dae</uri>
+                </mesh>
+            </geometry>
+        </collision>
+        <visual name="visual">
+            <geometry>
+                <mesh>
+                    <uri>model://mountain_forest_environment/meshes/mountain_forest_environment.dae</uri>
+                </mesh>
+            </geometry>
+        </visual>
+    </link>
+</model>
+</sdf>

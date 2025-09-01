@@ -1,0 +1,22 @@
+<sdf version="1.7">
+<model name="rocks_1">  
+    <static>true</static>
+    <link name="rocks_1">
+        <pose>0 0 0 0 0 0</pose>
+        <collision name="rocks_1_collision">
+            <geometry>
+                <mesh>
+                    <uri>model://rocks_1/meshes/rocks_1.dae</uri>
+                </mesh>
+            </geometry>
+        </collision>
+        <visual name="rocks_1_visual">
+            <geometry>
+                <mesh>
+                    <uri>model://rocks_1/meshes/rocks_1.dae</uri>
+                </mesh>
+            </geometry>
+        </visual>
+    </link>
+</model>
+</sdf>

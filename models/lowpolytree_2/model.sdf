@@ -1,0 +1,22 @@
+<sdf version="1.7">
+<model name="lowpolytree_2">  
+    <static>true</static>
+    <link name="lowpolytree_2">
+        <pose>0 0 0 0 0 0</pose>
+        <collision name="lowpolytree_2_collision">
+            <geometry>
+                <mesh>
+                    <uri>model://lowpolytree_2/meshes/lowpolytree_2.dae</uri>
+                </mesh>
+            </geometry>
+        </collision>
+        <visual name="lowpolytree_2_visual">
+            <geometry>
+                <mesh>
+                    <uri>model://lowpolytree_2/meshes/lowpolytree_2.dae</uri>
+                </mesh>
+            </geometry>
+        </visual>
+    </link>
+</model>
+</sdf>

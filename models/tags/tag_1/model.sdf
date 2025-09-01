@@ -1,0 +1,33 @@
+<sdf version="1.9">
+<model name="scenario_0">
+    <static>true</static>
+    <link name="link">
+        <collision name="collision">
+            <geometry>
+                <box> 
+                    <size> 1 1 1 </size> <!-- Change this to edit AR Tag Cube Size -->
+                </box>
+            </geometry>
+        </collision>
+        <visual name="visual">
+            <cast_shadows>false</cast_shadows>
+            <geometry>
+                <box> 
+                    <size> 1 1 1 </size> <!-- Change this to edit AR Tag Cube Size -->
+                </box>
+            </geometry>
+            <material>
+                <diffuse>1.0 1.0 1.0 1</diffuse>
+                <pbr>
+                    <metal>
+                        <albedo_map>
+                            model://tags/materials/texture/april_36h11-1.png
+                        </albedo_map>
+                    </metal>
+                </pbr>
+                <double_sided>true</double_sided>
+            </material>
+        </visual>
+    </link>
+</model>
+</sdf>
