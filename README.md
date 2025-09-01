@@ -30,14 +30,14 @@ colcon build --packages-select rs1_environment
 source install/setup.bash
 ```
 
-### 2. Launch a Simulation
+### 2. Launch Simulation
 
 ```bash
-# Launch a basic environment
-ros2 launch rs1_environment basic_world.launch.py
+# Launch the simulated environment
+ros2 launch rs1_environment spawn_environment.launch.py
 
 # Launch with specific world
-ros2 launch rs1_environment custom_world.launch.py world_name:=your_world_name
+ros2 launch rs1_environment spawn_environment.launch.py world:=world_name # Check Launch file for options
 ```
 
 ### 3. View in RQT
