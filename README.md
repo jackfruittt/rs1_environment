@@ -122,7 +122,7 @@ ros2 launch rs1_environment spawn_environment.launch.py world:=world_1 # By Defa
 ![AprilTag Cube for scenario representation](</images/Screenshot from 2025-09-01 19-05-57.png>)
 
 - World_1 Top_Down View
-![Map View of World_1](</rs1_environment/images/Screenshot from 2025-09-01 18-11-17.png>)
+![Map View of World_1](</images/Screenshot from 2025-09-01 18-11-17.png>)
  
 ## Troubleshooting
 
