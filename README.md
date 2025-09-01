@@ -93,14 +93,17 @@ ros2 launch rs1_environment spawn_environment.launch.py world:=world_1 # By Defa
 
 2. Create or edit corresponding launch file in `launch/`:
     - Check launch/ for spawn_environment.launch.py example.
-    - Worlds can be added to launch by including in the following section below
-            # Start Gazebo to simulate the robot in the chosen world
+    - Worlds can be added to launch by including in the following section below:
+    ```python
+    # Start Gazebo to simulate the robot in the chosen world
             world_launch_arg = DeclareLaunchArgument(
             'world',
             default_value='world_1',
             description='Which world to load',
             choices=['mountain_forest', 'test', 'world_1'] # Add more worlds here , seperated by commas
             )
+    ```
+            
 
 ### Adding New Models
 
