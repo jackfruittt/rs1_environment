@@ -65,12 +65,16 @@
     </include>
 
   <!-- SCENARIO AR_Tags START -->
-
     <include>
       <uri>model://tags/tag_0</uri>
       <name>tag_0</name>
       <pose>23 5 23 0 0 0</pose>
     </include>
+    <include>
+	      <uri>model://person</uri>
+	      <name>person1</name>
+	      <pose>22.93 4.83 12.07 0.81 0.86 2.86</pose>
+	  </include>
     <include>
       <uri>model://tags/tag_1</uri>
       <name>tag_1</name>
