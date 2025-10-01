@@ -65,11 +65,19 @@
     </include>
 
   <!-- SCENARIO AR_Tags START -->
+  <!-- Fire tags -->
     <include>
       <uri>model://tags/tag_0</uri>
-      <name>tag_0</name>
-      <pose>23 5 23 0 0 0</pose>
+      <name>tag_00</name>
+      <pose>-3.87 8.47 1.87 0 0 0</pose>
     </include>
+    <include>
+      <uri>model://tags/tag_0</uri>
+      <name>tag_01</name>
+      <pose>11.51 -23.4 2 0 0 0</pose>
+    </include>
+
+<!-- Injured person tag -->
     <include>
 	      <uri>model://person</uri>
 	      <name>person1</name>
@@ -78,12 +86,14 @@
     <include>
       <uri>model://tags/tag_1</uri>
       <name>tag_1</name>
-      <pose>11.5 -23 10 0 0 0</pose>
+      <pose>22.93 5.7 13.5 0 0 0</pose>
     </include>
+
+<!-- Debris tag -->
     <include>
       <uri>model://tags/tag_2</uri>
       <name>tag_2</name>
-      <pose>-20 -14 10 0 0 0</pose>
+      <pose>8.31 16.45 1.39 0 0 0</pose>
     </include>
   <!-- SCENARIO AR_Tags END -->
 
