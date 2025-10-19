@@ -69,17 +69,17 @@
     <include>
       <uri>model://tags/tag_0</uri>
       <name>tag_0</name>
-      <pose>23 5 23 0 0 0</pose>
+      <pose>32.89 7.15 32.89 0 0 0</pose>
     </include>
     <include>
       <uri>model://tags/tag_1</uri>
       <name>tag_1</name>
-      <pose>11.5 -23 10 0 0 0</pose>
+      <pose>16.445 -32.89 14.3 0 0 0</pose>
     </include>
     <include>
       <uri>model://tags/tag_2</uri>
       <name>tag_2</name>
-      <pose>-20 -14 10 0 0 0</pose>
+      <pose>-28.6 -20.02 14.3 0 0 0</pose>
     </include>
   <!-- SCENARIO AR_Tags END -->
 
