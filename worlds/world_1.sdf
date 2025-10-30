@@ -65,25 +65,36 @@
     </include>
 
   <!-- SCENARIO AR_Tags START -->
+
+    <!-- STRANDED_HIKERS -->
     <include>
       <uri>model://tags/tag_0</uri>
       <name>tag_0</name>
-      <pose>23 5 23 0 0 0</pose>
+      <pose>32.89 7.15 17.93 0 0 0</pose>
     </include>
+
+    <!-- WILDFIRES -->
     <include>
 	      <uri>model://person</uri>
 	      <name>person1</name>
 	      <pose>22.93 4.83 12.07 0.81 0.86 2.86</pose>
 	  </include>
     <include>
+      <uri>model://tags/tag_0</uri>
+      <name>tag_01</name>
+      <pose>-5.64 12.19 2.93 0 0 0</pose>
+    </include>
+    <include>
       <uri>model://tags/tag_1</uri>
       <name>tag_1</name>
-      <pose>11.5 -23 10 0 0 0</pose>
+      <pose>16.54 -33.62 3.6 0 0 0</pose>
     </include>
+
+    <!-- DEBRIS -->
     <include>
       <uri>model://tags/tag_2</uri>
       <name>tag_2</name>
-      <pose>-20 -14 10 0 0 0</pose>
+      <pose>-32.68 -21.5 8.19 0 0 0</pose>
     </include>
   <!-- SCENARIO AR_Tags END -->
 
