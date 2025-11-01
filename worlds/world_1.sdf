@@ -35,7 +35,7 @@
       <surface_model>EARTH_WGS84</surface_model>
     </spherical_coordinates>
     <light name='sun' type='directional'>
-      <pose>0 0 100 0 -0 0</pose>
+      <pose>0 0 50 0 -0 0</pose>
       <cast_shadows>false</cast_shadows>
       <intensity>5</intensity>
       <direction>-0.5 0.1 -0.9</direction>
@@ -83,12 +83,12 @@
     <include>
       <uri>model://tags/tag_0</uri>
       <name>tag_01</name>
-      <pose>-5.64 12.19 2.93 0 0 0</pose>
+      <pose>-5.64 12.19 10 0 0 0</pose>
     </include>
     <include>
       <uri>model://tags/tag_1</uri>
       <name>tag_1</name>
-      <pose>16.54 -33.62 3.6 0 0 0</pose>
+      <pose>16.54 -33.62 10 0 0 0</pose>
     </include>
 
     <!-- DEBRIS -->
