@@ -72,7 +72,13 @@
       <name>tag_0</name>
       <pose>32.89 7.15 17.93 0 0 0</pose>
     </include>
-
+    <include>
+	      <uri>model://person</uri>
+	      <name>person1</name>
+	      <!-- <pose>33. 7.15 17.1 1.1583 1.2298 4.0898</pose> -->
+        <pose>31.206100 4.695130 17.541500 1.329050 -0.054277 -3.113480</pose>
+	  </include>
+    
     <!-- WILDFIRES -->
     <include>
       <uri>model://tags/tag_0</uri>
