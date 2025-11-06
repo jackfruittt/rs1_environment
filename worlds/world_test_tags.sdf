@@ -1,5 +1,5 @@
 <sdf version='1.9'>
-  <world name='world_1'>
+  <world name='world_test_tags'>
 
     <!-- ENVIRONMENT PROPERTIES START -->
 
@@ -35,7 +35,7 @@
       <surface_model>EARTH_WGS84</surface_model>
     </spherical_coordinates>
     <light name='sun' type='directional'>
-      <pose>0 0 50 0 -0 0</pose>
+      <pose>0 0 100 0 -0 0</pose>
       <cast_shadows>false</cast_shadows>
       <intensity>5</intensity>
       <direction>-0.5 0.1 -0.9</direction>
@@ -64,40 +64,54 @@
       <pose>0 0 0 0 -0 0</pose>
     </include>
 
-  <!-- SCENARIO AR_Tags START -->
-
-    <!-- STRANDED_HIKERS -->
+  <!-- TEST TAGS FOR DRONES START -->
+  <!-- Tag in front of drone 1 (drone at x=-12, y=0, z=4) -->
     <include>
       <uri>model://tags/tag_0</uri>
-      <name>tag_0</name>
-      <pose>32.89 7.15 17.93 0 0 0</pose>
+      <name>test_tag_drone1</name>
+      <pose>-8 0 4 0 0 0</pose>
     </include>
+
+  <!-- Tag in front of drone 2 (drone at x=-9, y=0, z=4) -->
+    <include>
+      <uri>model://tags/tag_1</uri>
+      <name>test_tag_drone2</name>
+      <pose>-5 0 4 0 0 0</pose>
+    </include>
+  <!-- TEST TAGS FOR DRONES END -->
+
+  <!-- ORIGINAL SCENARIO AR_Tags START (kept for reference) -->
+  <!-- Fire tags -->
+    <include>
+      <uri>model://tags/tag_0</uri>
+      <name>tag_00</name>
+      <pose>-3.87 8.47 1.87 0 0 0</pose>
+    </include>
+    <include>
+      <uri>model://tags/tag_0</uri>
+      <name>tag_01</name>
+      <pose>11.51 -23.4 2 0 0 0</pose>
+    </include>
+
+<!-- Injured person tag -->
     <include>
 	      <uri>model://person</uri>
 	      <name>person1</name>
-	      <!-- <pose>33. 7.15 17.1 1.1583 1.2298 4.0898</pose> -->
-        <pose>31.206100 4.695130 17.541500 1.329050 -0.054277 -3.113480</pose>
+	      <pose>22.93 4.83 12.07 0.81 0.86 2.86</pose>
 	  </include>
-    
-    <!-- WILDFIRES -->
     <include>
       <uri>model://tags/tag_1</uri>
       <name>tag_1</name>
-      <pose>-5.64 12.19 5.0 0 0 0</pose>
-    </include>
-    <include>
-      <uri>model://tags/tag_1</uri>
-      <name>tag_1_1</name>
-      <pose>16.54 -33.62 10 0 0 0</pose>
+      <pose>22.93 5.7 13.5 0 0 0</pose>
     </include>
 
-    <!-- DEBRIS -->
+<!-- Debris tag -->
     <include>
       <uri>model://tags/tag_2</uri>
       <name>tag_2</name>
-      <pose>-32.68 -21.5 8.19 0 0 0</pose>
+      <pose>8.31 16.45 1.39 0 0 0</pose>
     </include>
-  <!-- SCENARIO AR_Tags END -->
+  <!-- ORIGINAL SCENARIO AR_Tags END -->
 
       
   <!-- ENVIRONMENT MODEL PLACE END -->
