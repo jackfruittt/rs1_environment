@@ -93,7 +93,7 @@
     <include>
       <uri>model://tags/tag_2</uri>
       <name>tag_2</name>
-      <pose>-32.68 -21.5 8.19 0 0 0</pose>
+      <pose>-32.48 -15.71 7.31 0 0 0</pose>
     </include>
   <!-- SCENARIO AR_Tags END -->
 
