@@ -22,22 +22,21 @@ rs1_environment/
 
 ## Quick Start
 
-### 1. Build the Package
+### 1. Clone the package into Software directory (make if not done)
 
 ```bash
-cd ~/your_workspace
-colcon build --packages-select rs1_environment
-source install/setup.bash
+mkdir Software # Skip this if it already exists
+cd Software
+git clone https://github.com/jackfruittt/rs1_environment.git
 ```
 
-### 2. Launch Simulation
+### 2. Link to rs1_ws/src and build 
 
 ```bash
-# Launch the simulated environment
-ros2 launch rs1_environment spawn_environment.launch.py
-
-# Launch with specific world
-ros2 launch rs1_environment spawn_environment.launch.py world:=world_name # Check Launch file for options
+cd rs1_ws/src
+ln -s ~/Software/rs1_environment
+cd ..
+colcon build
 ```
 
 ### 3. View in RQT
